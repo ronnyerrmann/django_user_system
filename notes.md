@@ -10,3 +10,8 @@ After preparing the project and app:
 ```commandline
 python manage.py migrate
 ```
+
+After creating the model:
+```commandline
+python manage.py makemigrations iaido_users
+```
