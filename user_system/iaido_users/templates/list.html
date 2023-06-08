@@ -1,0 +1,23 @@
+<!-- list.html -->
+<form method="get">
+    <input type="text" name="first_name" placeholder="Filter by first name" value="{{ request.GET.first_name }}">
+    <input type="text" name="last_name" placeholder="Filter by last name" value="{{ request.GET.last_name }}">
+    <input type="text" name="age" placeholder="Filter by age" value="{{ request.GET.age }}">
+    <button type="submit">Filter</button>
+</form>
+
+<ul>
+    <p>Number of (shown) entries: {{ objects.count }}</p>
+    <table  class='table_inner_borders'>
+      <tr>
+          <th>First Name</th> <th>Last Name</th> <th>Email</th> <th>Phone</th> <th> Date of Birth</th> <th> Age </th>
+      </tr>
+        {% for obj in objects %}
+            <tr>
+                <td>{{ obj.first_name }}</td> <td>{{ obj.last_name }}</td> <td>{{ obj.email }}</td>
+                <td>{{ obj.phone }}</td> <td>{{ obj.dob }}</td> <td>{{ obj.age }}</td> </tr>
+        {% empty %}
+            <tr> <td>No objects found.</td> </tr>
+        {% endfor %}
+    </table>
+</ul>

@@ -16,10 +16,12 @@ class Person(AbstractUser):
     username = models.CharField(max_length=200, unique=True)
     password = models.CharField(max_length=128)
 
-    def age(self, date: datetime.date) -> int:
+    @property
+    def age(self) -> int:
         today = datetime.date.today()
-        years = today.year - date.year
-        if (today - datetime.date(today.year, date.month, date.day)).days < 0:
+        years = today.year - self.dob.year
+        if (today - datetime.date(today.year, self.dob.month, self.dob.day)).days < 0:
             # The birthday this year hasn't happened yet
             years -= 1
         return years
+
