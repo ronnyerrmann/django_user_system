@@ -107,6 +107,9 @@ AUTHENTICATION_BACKENDS = [
 
 AUTH_USER_MODEL = 'iaido_users.Person'
 
+LOGIN_URL = 'login/'
+LOGIN_REDIRECT_URL = 'iaido/'
+
 # Internationalization
 # https://docs.djangoproject.com/en/4.2/topics/i18n/
 
