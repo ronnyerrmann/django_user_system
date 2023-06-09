@@ -8,13 +8,13 @@ class Person(AbstractUser):
     Use the AbstractUser class so the login to the django admin page can be handled with this table
     - to login to the admin site, the Person must have is_staff=True set
     """
-    first_name = models.CharField(max_length=200)
-    last_name = models.CharField(max_length=200)
-    email = models.EmailField(unique=True)
+    # first_name = models.CharField(max_length=200)             # Use the object from base class
+    # last_name = models.CharField(max_length=200)              # Use the object from base class
+    # email = models.EmailField(unique=True)                    # Use the object from base class
     phone = models.CharField(max_length=20)
-    dob = models.DateField()
-    username = models.CharField(max_length=200, unique=True)
-    password = models.CharField(max_length=128)
+    dob = models.DateField("Date of birth")
+    # username = models.CharField(max_length=200, unique=True)  # Use the object from base class
+    # password = models.CharField(max_length=128)               # Use the object from base class
 
     @property
     def age(self) -> int:
