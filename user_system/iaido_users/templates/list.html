@@ -1,4 +1,6 @@
 <!-- list.html -->
+{% extends "base.html" %}
+{% block content %}
 <form method="get">
     <input type="text" name="first_name" placeholder="Filter by first name" value="{{ request.GET.first_name }}">
     <input type="text" name="last_name" placeholder="Filter by last name" value="{{ request.GET.last_name }}">
@@ -21,3 +23,4 @@
         {% endfor %}
     </table>
 </ul>
+{% endblock %}
