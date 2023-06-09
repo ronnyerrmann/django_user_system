@@ -16,6 +16,7 @@ class Person(AbstractUser):
     # username = models.CharField(max_length=200, unique=True)  # Use the object from base class
     # password = models.CharField(max_length=128)               # Use the object from base class
 
+
     @property
     def age(self) -> int:
         today = datetime.date.today()
@@ -25,3 +26,15 @@ class Person(AbstractUser):
             years -= 1
         return years
 
+    def save(self, *args, **kwargs):
+        """ Before saving, hash the password, if necessary
+        """
+        password_needs_hash = True
+        if self.pk:
+            # Object already exists in the database, check for field changes
+            original_obj = Person.objects.get(pk=self.pk)
+            if self.password == original_obj.password:
+                password_needs_hash = False
+        if password_needs_hash:
+            self.set_password(self.password)
+        super().save(*args, **kwargs)
