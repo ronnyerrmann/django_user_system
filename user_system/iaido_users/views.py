@@ -32,7 +32,6 @@ def index(request):
     """ Instead of the login_required decorator one could also use
     if not request.user.is_authenticated:
         return redirect(f"{settings.LOGIN_URL}?next={request.path}")"""
-    #return HttpResponse("Hello, world. You're at the polls index.")
 
     queryset = Person.objects.all()
 
