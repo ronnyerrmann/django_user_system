@@ -22,3 +22,8 @@ The server can then be started (in my case on local port 8800)
 ```commandline
 python manage.py runserver 8800
 ```
+
+Tests are run by
+```commandline
+python manage.py test
+```
