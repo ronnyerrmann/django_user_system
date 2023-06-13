@@ -76,9 +76,9 @@ WSGI_APPLICATION = 'user_system.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        #'NAME': ':memory:',
+        # 'NAME': ':memory:',       # For in memory database
         'NAME': BASE_DIR / 'db.sqlite3'
-    }
+    },
 }
 
 
