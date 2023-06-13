@@ -49,6 +49,6 @@ def index(request):
         queryset = [obj for obj in queryset if obj.age == age_filter]
 
     context = {
-        'objects': queryset
+        'objects': queryset, 'user': request.user
     }
     return render(request, 'list.html', context)
