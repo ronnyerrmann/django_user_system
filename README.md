@@ -1,11 +1,13 @@
-
+### Without pulling this project
 Create `user_system` project with app `iaido_users`:
 ```commandline
 django-admin startproject user_system
 python manage.py startapp iaido_users
 ```
+Afterwards continue with the steps below, assuming the users are still being added
 
-After preparing the project, app, and model:
+### To run the API locally
+After pulling the project or preparing the project, app, and model:
 ```commandline
 python manage.py makemigrations iaido_users
 python manage.py migrate

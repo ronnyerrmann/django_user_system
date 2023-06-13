@@ -100,11 +100,13 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+# Use the Person model to login to the backenc
 AUTHENTICATION_BACKENDS = [
     'iaido_users.backends.PersonBackend',
     'django.contrib.auth.backends.ModelBackend',
 ]
 
+# Use the Person model to login
 AUTH_USER_MODEL = 'iaido_users.Person'
 
 LOGIN_URL = 'login/'

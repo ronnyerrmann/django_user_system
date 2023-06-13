@@ -19,6 +19,8 @@ class Person(AbstractUser):
 
     @property
     def age(self) -> int:
+        """ Use the date of birth in the database to calculate the age of the user
+        """
         today = datetime.date.today()
         years = today.year - self.dob.year
         if (today - datetime.date(today.year, self.dob.month, self.dob.day)).days < 0:
