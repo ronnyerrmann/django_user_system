@@ -1,9 +1,9 @@
 import copy
 from datetime import date
-from unittest.mock import call, MagicMock, patch
+from unittest.mock import MagicMock, patch
 
 from django.test import TestCase
-from .models import Person
+from iaido_users.models import Person
 
 
 class Test_Person(TestCase):
